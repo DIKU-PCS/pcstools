@@ -14,7 +14,7 @@ def pack8(arg):
 
     Integers are packed as 8-bit, unsigned, little-endian values.
 
-    Byte-strings are packed as-is.
+    Byte-strings and byte-arrays are packed as-is.
 
     Unicode-strings are utf-8 encoded.
 
@@ -41,7 +41,7 @@ def pack16(arg):
 
     Integers are packed as 16-bit, unsigned, little-endian values.
 
-    Byte-strings are packed as-is.
+    Byte-strings and byte-arrays are packed as-is.
 
     Unicode-strings are utf-8 encoded.
 
@@ -67,7 +67,7 @@ def pack32(arg):
 
     Integers are packed as 32-bit, unsigned, little-endian values.
 
-    Byte-strings are packed as-is.
+    Byte-strings and byte-arrays are packed as-is.
 
     Unicode-strings are utf-8 encoded.
 
@@ -93,7 +93,7 @@ def pack64(arg):
 
     Integers are packed as 64-bit, unsigned, little-endian values.
 
-    Byte-strings are packed as-is.
+    Byte-strings and byte-arrays are packed as-is.
 
     Unicode-strings are utf-8 encoded.
 
