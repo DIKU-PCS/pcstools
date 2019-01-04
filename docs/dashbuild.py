@@ -88,9 +88,9 @@ def main(args):
 	return 0
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--name", help="docset name", default="pwntools")
-parser.add_argument("--online", help="URL for online docs", default="https://pwntools.readthedocs.org/en/@VERSION/")
-parser.add_argument("--version", help="pwntools version", default=version.__version__)
+parser.add_argument("--name", help="docset name", default="pcstools")
+parser.add_argument("--online", help="URL for online docs", default="https://pcstools.readthedocs.org/en/@VERSION/")
+parser.add_argument("--version", help="pcstools version", default=version.__version__)
 parser.add_argument("srcdir", help="Source directory containing .rst files")
 parser.add_argument("dstdir", help="Destination and working directory")
 
