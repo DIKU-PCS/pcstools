@@ -37,6 +37,8 @@ setup(
     description          = "Tools for the course Proactive Computer Security at DIKU",
     long_description     = long_description,
     author               = "Mathias Svensson",
+    author_email         = "freaken@freaken.dk",
+    url                  = 'https://github.com/DIKU-PCS/pcstools',
     license              = "MIT",
     classifiers          = [
         'Intended Audience :: Developers',

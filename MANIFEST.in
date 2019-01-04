@@ -1,4 +1,4 @@
 include *.md *.txt MANIFEST.in
 recursive-include docs   *.rst *.png Makefile *.py *.txt
-recursive-include pcstools *.py *.rst
-recursive-exclude *.pyc
+recursive-include pcstools *.py
+recursive-exclude . *.pyc
