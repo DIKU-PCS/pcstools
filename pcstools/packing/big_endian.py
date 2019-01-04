@@ -19,22 +19,17 @@ def pack8(arg):
 
     Examples:
         >>> from pcstools.packing.big_endian import pack8
-        >>> pack8(0x41)
-        b'A'
-        >>> pack8([0x41, 0x42])
-        b'AB'
-        >>> pack8([0x41, 0x42, ["hello"]])
-        b'ABhello'
-        >>> pack8(u'☃')
-        b'\xe2\x98\x83'
+        >>> assert pack8(0x41) == b'A'
+        >>> assert pack8([0x41, 0x42]) == b'AB'
+        >>> assert pack8([0x41, 0x42, ["hello"]]) == b'ABhello'
+        >>> assert pack8(u'\u2603') == b'\xe2\x98\x83'
         >>> pack8(-1)
         Traceback (most recent call last):
            ...
         ValueError: Number must be positive and below 2**8, but number == -1
         >>> # It is also possible to combine pack8 with other packers
         >>> from pcstools.packing.big_endian import pack32
-        >>> pack8([0x41, 0x42, pack32(0xdeadbeef)])
-        b'AB\xde\xad\xbe\xef'
+        >>> assert pack8([0x41, 0x42, pack32(0xdeadbeef)]) == b'AB\xde\xad\xbe\xef'
     """
 
     return pcstools.packing.pack('>B', 8, arg)
@@ -51,22 +46,17 @@ def pack16(arg):
 
     Examples:
         >>> from pcstools.packing.big_endian import pack16
-        >>> pack16(0x4241)
-        b'BA'
-        >>> pack16([0x4241, 0x4142])
-        b'BAAB'
-        >>> pack16([0x4241, ["hello"]])
-        b'BAhello'
-        >>> pack16(u'☃')
-        b'\xe2\x98\x83'
+        >>> assert pack16(0x4241) == b'BA'
+        >>> assert pack16([0x4241, 0x4142]) == b'BAAB'
+        >>> assert pack16([0x4241, ["hello"]]) == b'BAhello'
+        >>> assert pack16(u'\u2603') == b'\xe2\x98\x83'
         >>> pack16(-1)
         Traceback (most recent call last):
            ...
         ValueError: Number must be positive and below 2**16, but number == -1
         >>> # It is also possible to combine pack16 with other packers
         >>> from pcstools.packing.big_endian import pack32
-        >>> pack16([0x4241, pack32(0xdeadbeef)])
-        b'BA\xde\xad\xbe\xef'
+        >>> assert pack16([0x4241, pack32(0xdeadbeef)]) == b'BA\xde\xad\xbe\xef'
     """
     return pcstools.packing.pack('>H', 16, arg)
 
@@ -82,22 +72,17 @@ def pack32(arg):
 
     Examples:
         >>> from pcstools.packing.big_endian import pack32
-        >>> pack32(0x44434241)
-        b'DCBA'
-        >>> pack32([0x44434241, 0x41424344])
-        b'DCBAABCD'
-        >>> pack32([0x44434241, ["hello"]])
-        b'DCBAhello'
-        >>> pack32(u'☃')
-        b'\xe2\x98\x83'
+        >>> assert pack32(0x44434241) == b'DCBA'
+        >>> assert pack32([0x44434241, 0x41424344]) == b'DCBAABCD'
+        >>> assert pack32([0x44434241, ["hello"]]) == b'DCBAhello'
+        >>> assert pack32(u'\u2603') == b'\xe2\x98\x83'
         >>> pack32(-1)
         Traceback (most recent call last):
            ...
         ValueError: Number must be positive and below 2**32, but number == -1
         >>> # It is also possible to combine pack32 with other packers
         >>> from pcstools.packing.big_endian import pack8
-        >>> pack32([0xdeadbeef, pack8(0x41)])
-        b'\xde\xad\xbe\xefA'
+        >>> assert pack32([0xdeadbeef, pack8(0x41)]) == b'\xde\xad\xbe\xefA'
     """
     return pcstools.packing.pack('>I', 32, arg)
 
@@ -113,22 +98,17 @@ def pack64(arg):
 
     Examples:
         >>> from pcstools.packing.big_endian import pack64
-        >>> pack64(0x4847464544434241)
-        b'HGFEDCBA'
-        >>> pack64([0x4847464544434241, 0x4142434445464748])
-        b'HGFEDCBAABCDEFGH'
-        >>> pack64([0x4847464544434241, ["hello"]])
-        b'HGFEDCBAhello'
-        >>> pack64(u'☃')
-        b'\xe2\x98\x83'
+        >>> assert pack64(0x4847464544434241) == b'HGFEDCBA'
+        >>> assert pack64([0x4847464544434241, 0x4142434445464748]) == b'HGFEDCBAABCDEFGH'
+        >>> assert pack64([0x4847464544434241, ["hello"]]) == b'HGFEDCBAhello'
+        >>> assert pack64(u'\u2603') == b'\xe2\x98\x83'
         >>> pack64(-1)
         Traceback (most recent call last):
            ...
         ValueError: Number must be positive and below 2**64, but number == -1
         >>> # It is also possible to combine pack64 with other packers
         >>> from pcstools.packing.big_endian import pack8
-        >>> pack64([0xdeadbeefdeadbeef, pack8(0x41)])
-        b'\xde\xad\xbe\xef\xde\xad\xbe\xefA'
+        >>> assert pack64([0xdeadbeefdeadbeef, pack8(0x41)]) == b'\xde\xad\xbe\xef\xde\xad\xbe\xefA'
     """
     return pcstools.packing.pack('>Q', 64, arg)
 

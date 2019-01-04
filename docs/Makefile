@@ -3,9 +3,11 @@
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
-SPHINXBUILD   = sphinx-build
+SPHINXBUILD   = sphinx3-build
+SPHINX2BUILD  = sphinx2-build
 PAPER         =
 BUILDDIR      = build
+BUILDDIR2     = build2
 DASHBUILD     = ./dashbuild.py
 TAR           = tar
 
@@ -159,5 +161,6 @@ linkcheck:
 
 doctest:
 	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
+	$(SPHINX2BUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR2)/doctest
 	@echo "Testing of doctests in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/doctest/output.txt."
