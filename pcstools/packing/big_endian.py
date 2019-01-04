@@ -1,5 +1,8 @@
-__all__ = ['pack8', 'pack16', 'pack32', 'pack64',
-           'unpack8', 'unpack16', 'unpack32', 'unpack64']
+__all__ = [
+    'pack8', 'pack16', 'pack32', 'pack64',
+    'unpack8', 'unpack16', 'unpack32', 'unpack64',
+    'unpack8_many', 'unpack16_many', 'unpack32_many', 'unpack64_many',
+]
 
 import pcstools.packing
 import struct
