@@ -14,7 +14,8 @@ Each of the ``pcstools`` modules is documented here.
    :maxdepth: 1
    :glob:
 
-   packing
+   packing_little
+   packing_big
 
 .. only:: not dash
 

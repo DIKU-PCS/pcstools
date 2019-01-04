@@ -2,4 +2,4 @@ from __future__ import unicode_literals, print_function, absolute_import, divisi
 
 all = ["packing"]
 
-__version__ = u'0.2-dev'
+__version__ = u'0.3-dev'

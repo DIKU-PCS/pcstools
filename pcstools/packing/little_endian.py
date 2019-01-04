@@ -19,7 +19,7 @@ def pack8(arg):
         >>> from pcstools.packing.little_endian import pack8
         >>> assert pack8(0x41) == b'A'
         >>> assert pack8([0x41, 0x42]) == b'AB'
-        >>> assert pack8([0x41, 0x42, ["hello"]]) == b'ABhello'
+        >>> assert pack8([0x41, 0x42, (u'hello', b'hi', bytearray(b'sup'))]) == b'ABhellohisup'
         >>> assert pack8(u'\u2603') == b'\xe2\x98\x83'
         >>> pack8(-1)
         Traceback (most recent call last):
@@ -46,7 +46,7 @@ def pack16(arg):
         >>> from pcstools.packing.little_endian import pack16
         >>> assert pack16(0x4241) == b'AB'
         >>> assert pack16([0x4241, 0x4142]) == b'ABBA'
-        >>> assert pack16([0x4241, ["hello"]]) == b'ABhello'
+        >>> assert pack16([0x4241, (u'hello', b'hi', bytearray(b'sup'))]) == b'ABhellohisup'
         >>> assert pack16(u'\u2603') == b'\xe2\x98\x83'
         >>> pack16(-1)
         Traceback (most recent call last):
@@ -72,7 +72,7 @@ def pack32(arg):
         >>> from pcstools.packing.little_endian import pack32
         >>> assert pack32(0x44434241) == b'ABCD'
         >>> assert pack32([0x44434241, 0x41424344]) == b'ABCDDCBA'
-        >>> assert pack32([0x44434241, ["hello"]]) == b'ABCDhello'
+        >>> assert pack32([0x44434241, (u'hello', b'hi', bytearray(b'sup'))]) == b'ABCDhellohisup'
         >>> assert pack32(u'\u2603') == b'\xe2\x98\x83'
         >>> pack32(-1)
         Traceback (most recent call last):
@@ -98,7 +98,7 @@ def pack64(arg):
         >>> from pcstools.packing.little_endian import pack64
         >>> assert pack64(0x4847464544434241) == b'ABCDEFGH'
         >>> assert pack64([0x4847464544434241, 0x4142434445464748]) == b'ABCDEFGHHGFEDCBA'
-        >>> assert pack64([0x4847464544434241, ["hello"]]) == b'ABCDEFGHhello'
+        >>> assert pack64([0x4847464544434241, (u'hello', b'hi', bytearray(b'sup'))]) == b'ABCDEFGHhellohisup'
         >>> assert pack64(u'\u2603') == b'\xe2\x98\x83'
         >>> pack64(-1)
         Traceback (most recent call last):
