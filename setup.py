@@ -1,41 +1,18 @@
-import glob
-
-from setuptools import find_packages
-from setuptools import setup
+import setuptools
 
 # Convert README.md to reStructuredText for PyPI
-long_description = '''
-pcstools - exploit toolkit for the PCS course
-=====================================
+with open('README.md', 'r') as fd:
+    long_description = fd.read()
 
-`MIT License <http://choosealicense.com/licenses/mit/>`__
-
-pcstools is an exploit development library heavily inspired by
-`https://pwntools.com/ <pwntools>`__. It is not a design goal to be
-API-compatible with pwntools, but it is likely that we will be mostly
-compatible.
-
-.. code:: python
-
-   from pcstools import *
-
-   r = remote('exploitme.example.com', 31337)
-   # EXPLOIT CODE GOES HERE
-   r.send(asm(shellcraft.sh()))
-   r.interactive()
-'''
-
-setup(
+setuptools.setup(
     name='pcstools',
     python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, <4',
 
-    packages=find_packages(),
+    packages=setuptools.find_packages(),
     version='0.3',
-    data_files=[('',
-                 glob.glob('*.md') + glob.glob('*.txt')),
-                ],
     description="Tools for the course Proactive Computer Security at DIKU",
     long_description=long_description,
+    long_description_content_type="text/markdown",
     author="Mathias Svensson",
     author_email="freaken@freaken.dk",
     url='https://github.com/DIKU-PCS/pcstools',
