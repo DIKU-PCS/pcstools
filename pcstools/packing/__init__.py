@@ -1,7 +1,6 @@
-from pcstools.compat import is_int, is_bytes, is_unicode, is_iterable, is_bytearray
+from __future__ import unicode_literals, print_function, absolute_import, division
 import struct
-import collections
-import pcstools.packing
+from pcstools.compat import is_int, is_bytes, is_unicode, is_iterable, is_bytearray
 
 __all__ = [u'big_endian', u'little_endian']
 

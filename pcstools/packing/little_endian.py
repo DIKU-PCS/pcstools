@@ -1,12 +1,13 @@
+from __future__ import unicode_literals, print_function, absolute_import, division
+import struct
+import pcstools.packing
+from pcstools.compat import is_bytes
+
 __all__ = [
     'pack8', 'pack16', 'pack32', 'pack64',
     'unpack8', 'unpack16', 'unpack32', 'unpack64',
     'unpack8_many', 'unpack16_many', 'unpack32_many', 'unpack64_many',
 ]
-
-import pcstools.packing
-import struct
-from pcstools.compat import is_bytes
 
 
 def pack8(arg):
