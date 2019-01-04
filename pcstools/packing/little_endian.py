@@ -30,7 +30,11 @@ def pack8(arg):
         >>> pack8(-1)
         Traceback (most recent call last):
            ...
-        AssertionError: Number must be positive and below 2**8, but number == -1
+        ValueError: Number must be positive and below 2**8, but number == -1
+        >>> # It is also possible to combine pack8 with other packers
+        >>> from pcstools.packing.little_endian import pack16
+        >>> pack8([0x41, 0x42, pack16(0x4443)])
+        b'ABCD'
     """
 
     return pcstools.packing.pack('<B', 8, arg)
@@ -58,7 +62,7 @@ def pack16(arg):
         >>> pack16(-1)
         Traceback (most recent call last):
            ...
-        AssertionError: Number must be positive and below 2**16, but number == -1
+        ValueError: Number must be positive and below 2**16, but number == -1
     """
     return pcstools.packing.pack('<H', 16, arg)
 
@@ -85,7 +89,7 @@ def pack32(arg):
         >>> pack32(-1)
         Traceback (most recent call last):
            ...
-        AssertionError: Number must be positive and below 2**32, but number == -1
+        ValueError: Number must be positive and below 2**32, but number == -1
     """
     return pcstools.packing.pack('<I', 32, arg)
 
@@ -112,7 +116,7 @@ def pack64(arg):
         >>> pack64(-1)
         Traceback (most recent call last):
            ...
-        AssertionError: Number must be positive and below 2**64, but number == -1
+        ValueError: Number must be positive and below 2**64, but number == -1
     """
     return pcstools.packing.pack('<Q', 64, arg)
 
@@ -131,14 +135,17 @@ def unpack8(s):
         >>> unpack8(b'')
         Traceback (most recent call last):
            ...
-        AssertionError: Argument must be of length 1
+        ValueError: Argument must be of length 1
         >>> unpack8(u'A')
         Traceback (most recent call last):
            ...
-        AssertionError: Argument must be a bytestring
+        ValueError: Argument must be a bytestring
     """
-    assert is_bytes(s), "Argument must be a bytestring"
-    assert len(s) == 1, "Argument must be of length 1"
+    if not is_bytes(s):
+        raise ValueError("Argument must be a bytestring")
+
+    if len(s) != 1:
+        raise ValueError("Argument must be of length 1")
     return struct.unpack('<B', s)[0]
 
 
@@ -158,15 +165,19 @@ def unpack16(s):
         >>> unpack16(b'')
         Traceback (most recent call last):
            ...
-        AssertionError: Argument must be of length 2
+        ValueError: Argument must be of length 2
         >>> unpack16(u'AB')
         Traceback (most recent call last):
            ...
-        AssertionError: Argument must be a bytestring
+        ValueError: Argument must be a bytestring
     """
 
-    assert is_bytes(s), "Argument must be a bytestring"
-    assert len(s) == 2, "Argument must be of length 2"
+    if not is_bytes(s):
+        raise ValueError("Argument must be a bytestring")
+
+    if len(s) != 2:
+        raise ValueError("Argument must be of length 2")
+
     return struct.unpack('<H', s)[0]
 
 
@@ -186,15 +197,19 @@ def unpack32(s):
         >>> unpack32(b'')
         Traceback (most recent call last):
            ...
-        AssertionError: Argument must be of length 4
+        ValueError: Argument must be of length 4
         >>> unpack32(u'ABCD')
         Traceback (most recent call last):
            ...
-        AssertionError: Argument must be a bytestring
+        ValueError: Argument must be a bytestring
     """
 
-    assert is_bytes(s), "Argument must be a bytestring"
-    assert len(s) == 4, "Argument must be of length 4"
+    if not is_bytes(s):
+        raise ValueError("Argument must be a bytestring")
+
+    if len(s) != 4:
+        raise ValueError("Argument must be of length 4")
+
     return struct.unpack('<I', s)[0]
 
 
@@ -214,13 +229,17 @@ def unpack64(s):
         >>> unpack64(b'')
         Traceback (most recent call last):
            ...
-        AssertionError: Argument must be of length 8
+        ValueError: Argument must be of length 8
         >>> unpack64(u'ABCDEFGH')
         Traceback (most recent call last):
            ...
-        AssertionError: Argument must be a bytestring
+        ValueError: Argument must be a bytestring
     """
 
-    assert is_bytes(s), "Argument must be a bytestring"
-    assert len(s) == 8, "Argument must be of length 8"
+    if not is_bytes(s):
+        raise ValueError("Argument must be a bytestring")
+
+    if len(s) != 8:
+        raise ValueError("Argument must be of length 8")
+
     return struct.unpack('<Q', s)[0]

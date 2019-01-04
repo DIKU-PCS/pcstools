@@ -277,10 +277,10 @@ branch = release
 try:
     git_branch = subprocess.check_output('git describe --tags', shell=True)
 except subprocess.CalledProcessError:
-    git_branch = '-'
+    git_branch = b'-'
 
 try:
-    if '-' in git_branch:
+    if b'-' in git_branch:
         branch = subprocess.check_output(
             'git rev-parse HEAD', shell=True).strip()[:10]
 except subprocess.CalledProcessError:
