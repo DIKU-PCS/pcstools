@@ -26,21 +26,21 @@ compatible.
 '''
 
 setup(
-    name                 = 'pcstools',
-    python_requires      = '>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, <4',
+    name='pcstools',
+    python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, <4',
 
-    packages             = find_packages(),
-    version              = '0.1',
-    data_files           = [('',
-                             glob.glob('*.md') + glob.glob('*.txt')),
-                            ],
-    description          = "Tools for the course Proactive Computer Security at DIKU",
-    long_description     = long_description,
-    author               = "Mathias Svensson",
-    author_email         = "freaken@freaken.dk",
-    url                  = 'https://github.com/DIKU-PCS/pcstools',
-    license              = "MIT",
-    classifiers          = [
+    packages=find_packages(),
+    version='0.2',
+    data_files=[('',
+                 glob.glob('*.md') + glob.glob('*.txt')),
+                ],
+    description="Tools for the course Proactive Computer Security at DIKU",
+    long_description=long_description,
+    author="Mathias Svensson",
+    author_email="freaken@freaken.dk",
+    url='https://github.com/DIKU-PCS/pcstools',
+    license="MIT",
+    classifiers=[
         'Intended Audience :: Developers',
         'Intended Audience :: Science/Research',
         'Intended Audience :: System Administrators',
