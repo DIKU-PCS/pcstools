@@ -314,7 +314,7 @@ def linkcode_resolve(domain, info):
         except IOError:
             pass
 
-    return "https://github.com/Gallopsled/pwntools/blob/%s/%s" % (branch, filename)
+    return "https://github.com/DIKU-PCS/pcstools/blob/%s/%s" % (branch, filename)
 
 
 # The readthedocs theme is used by the Dash generator. (Can be used for HTML too.)

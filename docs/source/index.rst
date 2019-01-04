@@ -1,11 +1,9 @@
 pcstools
 ====================================
 
-The primary location for this documentation is at docs.pwntools.com_, which uses
-readthedocs_.
+The primary location for this documentation is at pcstools.readthedocs.io_.
 
-.. _readthedocs: https://readthedocs.org
-.. _docs.pwntools.com: https://docs.pwntools.com
+.. _pcstools.readthedocs.io: https://pcstools.readthedocs.io
 
 Module Index
 ------------

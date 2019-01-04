@@ -44,9 +44,6 @@ help:
 
 clean:
 	-rm -rf $(BUILDDIR)/*
-	-rm -rf /tmp/user/pwn*
-	-rm -rf $(HOME)/.pwntools-cache
-	-rm -rf /tmp/pwn* 2>/dev/null || true
 	-rm -rf build
 
 html:
@@ -85,17 +82,17 @@ qthelp:
 	@echo
 	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
 	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/pwntools.qhcp"
+	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/pcstools.qhcp"
 	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/pwntools.qhc"
+	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/pcstools.qhc"
 
 devhelp:
 	$(SPHINXBUILD) -b devhelp $(ALLSPHINXOPTS) $(BUILDDIR)/devhelp
 	@echo
 	@echo "Build finished."
 	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/pwntools"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/pwntools"
+	@echo "# mkdir -p $$HOME/.local/share/devhelp/pcstools"
+	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/pcstools"
 	@echo "# devhelp"
 
 epub:
@@ -146,7 +143,7 @@ gettext:
 
 dash:
 	$(DASHBUILD) source $(BUILDDIR)/dash
-	$(TAR) --exclude='.DS_Store' -cvzf $(BUILDDIR)/dash/pwntools.tgz -C $(BUILDDIR)/dash pwntools.docset
+	$(TAR) --exclude='.DS_Store' -cvzf $(BUILDDIR)/dash/pcstools.tgz -C $(BUILDDIR)/dash pcstools.docset
 	@echo "Build finished. The Dash docset is in $(BUILDDIR)/dash."
 
 changes:

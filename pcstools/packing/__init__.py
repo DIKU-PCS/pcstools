@@ -8,8 +8,9 @@ __all__ = [u'big_endian', u'little_endian']
 
 def pack(format, bits, arg):
     if is_int(arg):
-        assert 0 <= arg < 2**bits, "Number must be positive and below 2**{}, but number == {}".format(
-            bits, arg)
+        if not (0 <= arg < 2**bits):
+            raise ValueError("Number must be positive and below 2**{}, but number == {}".format(
+                bits, arg))
         return struct.pack(format, arg)
     elif is_bytes(arg):
         return arg
