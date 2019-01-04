@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 __all__ = ['pack8', 'pack16', 'pack32', 'pack64',
            'unpack8', 'unpack16', 'unpack32', 'unpack64']
 
