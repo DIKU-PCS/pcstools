@@ -1,4 +1,4 @@
-from pcstools.compat import is_int, is_bytes, is_unicode, is_iterable
+from pcstools.compat import is_int, is_bytes, is_unicode, is_iterable, is_bytearray
 import struct
 import collections
 import pcstools.packing
@@ -16,6 +16,8 @@ def pack(format, bits, arg):
         return arg
     elif is_unicode(arg):
         return arg.encode('utf-8')
+    elif is_bytearray(arg):
+        return bytes(arg)
     elif is_iterable(arg):
         return b''.join(pack(format, bits, a) for a in arg)
     else:
