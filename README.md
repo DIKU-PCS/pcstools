@@ -1,6 +1,6 @@
 # pcstools - exploit toolkit for the PCS course
 [![Docs](https://readthedocs.org/projects/pcstools/badge/?version=stable)](https://pcstools.readthedocs.io/)
-[![PyPI](https://img.shields.io/badge/pypi-v0.3-green.svg?style=flat)](https://pypi.python.org/pypi/pcstools/)
+[![PyPI](https://img.shields.io/badge/pypi-v0.4-green.svg?style=flat)](https://pypi.python.org/pypi/pcstools/)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://choosealicense.com/licenses/mit/)
 
 pcstools is an exploit development library heavily inspired by [https://pwntools.com/](pwntools).

@@ -9,7 +9,7 @@ setuptools.setup(
     python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, <4',
 
     packages=setuptools.find_packages(),
-    version='0.3',
+    version='0.4',
     description="Tools for the course Proactive Computer Security at DIKU",
     long_description=long_description,
     long_description_content_type="text/markdown",
