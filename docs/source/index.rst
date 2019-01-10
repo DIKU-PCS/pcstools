@@ -3,6 +3,8 @@ pcstools
 
 The primary location for this documentation is at pcstools.readthedocs.io_.
 
+See our https://github.com/DIKU-PCS/pcstools for more information.
+
 .. _pcstools.readthedocs.io: https://pcstools.readthedocs.io
 
 Module Index
